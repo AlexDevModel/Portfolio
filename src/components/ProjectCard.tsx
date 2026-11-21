@@ -20,7 +20,15 @@ export default function ProjectCard({project}:ProjectCardProps){
     onPointerLeave={()=>setTilt({x:0,y:0})}
     style={{transform:`perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`}}
   >
-    <div className="visual"><small>{project.number}</small><div className="shape"/><b>✳</b><label>{project.category}</label></div>
-    <div className="project-copy"><small>{project.category}</small><h3>{project.title}</h3><p>{project.description}</p><span>STARTER CONTENT</span></div>
+    {project.href ? <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
+      <ProjectContent project={project}/>
+    </a> : <ProjectContent project={project}/>}
   </article>;
+}
+
+function ProjectContent({project}:{project:Project}){
+  return <>
+    <div className="visual"><small>{project.number}</small><div className="shape"/><b>✳</b><label>{project.category}</label></div>
+    <div className="project-copy"><small>{project.category}</small><h3>{project.title}{project.href && <span aria-hidden="true"> ↗</span>}</h3><p>{project.description}</p>{!project.href && <span>STARTER CONTENT</span>}</div>
+  </>;
 }
