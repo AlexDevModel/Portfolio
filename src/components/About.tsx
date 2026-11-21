@@ -1,0 +1,16 @@
+import {site} from '../data/site';
+
+export default function About(){
+  return <section className="about shell" id="about">
+    <div className="topline"><p className="eyebrow">03 / A BIT ABOUT ME</p><p>The person behind<br/>the pixels.</p></div>
+    <div className="about-grid">
+      <h2>Curiosity is<br/>part of the <em>process.</em></h2>
+      <div>
+        <p>I'm a game development student who enjoys figuring out how things work — from the structure of a system to the details that make an interactive world feel right.</p>
+        <p>This portfolio is a growing record of experiments, projects and ideas. I'll keep adding to it as the work gets made.</p>
+        {site.contactEmail && <a className="underlink" href={`mailto:${site.contactEmail}`}>Let's talk ↗</a>}
+      </div>
+    </div>
+    <div className="coming"><b>✳</b><div><small>CURRENTLY IN DEVELOPMENT</small><h3>More game projects on the way.</h3></div><label>COMING SOON</label></div>
+  </section>;
+}
