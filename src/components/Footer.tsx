@@ -1,0 +1,1 @@
+export default function Footer(){return <footer><div className="shell foot"><a className="logo" href="#top">A<span>.</span></a><p>Made with curiosity and a little bit of code.</p><a href="#top">BACK TO TOP ↑</a><small>© 2026</small></div></footer>}
