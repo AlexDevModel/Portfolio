@@ -6,5 +6,15 @@ import About from './components/About';
 import Footer from './components/Footer';
 
 export default function App() {
-  return <><Navigation/><main><Hero/><ProjectGallery/><ModelShowcase/><About/></main><Footer/></>;
+  return <>
+    <a className="skip-link" href="#main-content">Skip to content</a>
+    <Navigation/>
+    <main id="main-content">
+      <Hero/>
+      <ProjectGallery/>
+      <ModelShowcase/>
+      <About/>
+    </main>
+    <Footer/>
+  </>;
 }
