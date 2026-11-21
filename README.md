@@ -22,6 +22,7 @@ Build for production with `npm run build`.
 ## Documentation
 - [Website guide](docs/WEBSITE_GUIDE.md)
 - [Adding 3D models](docs/ADDING_3D_MODELS.md)
+- [Publishing the site](docs/DEPLOYMENT.md)
 
 ## Current state
 The first version includes a responsive portfolio landing page, starter project cards, an interactive 3D preview and an About section. It uses CSS artwork and procedural geometry rather than AI-generated or unlicensed visual assets.

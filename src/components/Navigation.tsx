@@ -1,8 +1,18 @@
-import {useState} from 'react';
+import {useEffect,useState} from 'react';
 import {site} from '../data/site';
 
 export default function Navigation(){
   const [open,setOpen]=useState(false);
+
+  useEffect(()=>{
+    if(!open)return;
+    const closeOnEscape=(event:KeyboardEvent)=>{
+      if(event.key==='Escape')setOpen(false);
+    };
+    window.addEventListener('keydown',closeOnEscape);
+    return ()=>window.removeEventListener('keydown',closeOnEscape);
+  },[open]);
+
   return <header className="header">
     <a className="logo" href="#top" aria-label="Back to top">A<span>.</span></a>
     <button className="menu" type="button" onClick={()=>setOpen(!open)} aria-label={open?'Close navigation':'Open navigation'} aria-controls="site-navigation" aria-expanded={open}>☰</button>
