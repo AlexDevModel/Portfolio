@@ -1,6 +1,6 @@
 import {Suspense} from 'react';
 import {Canvas} from '@react-three/fiber';
-import {OrbitControls} from '@react-three/drei';
+import {Float,OrbitControls} from '@react-three/drei';
 import ModelAsset from './ModelAsset';
 
 type ModelViewerProps={modelPath?:string};
@@ -13,9 +13,11 @@ export default function ModelViewer({modelPath}:ModelViewerProps){
     <ambientLight intensity={1.25}/>
     <directionalLight position={[3,4,5]} intensity={2.4} castShadow/>
     <pointLight position={[-3,-2,-2]} intensity={.65}/>
-    <Suspense fallback={<PlaceholderModel/>}>
-      {modelPath?<ModelAsset path={modelPath}/>:<PlaceholderModel/>}
-    </Suspense>
+    <Float speed={1.2} rotationIntensity={.12} floatIntensity={.22}>
+      <Suspense fallback={<PlaceholderModel/>}>
+        {modelPath?<ModelAsset path={modelPath}/>:<PlaceholderModel/>}
+      </Suspense>
+    </Float>
     <OrbitControls enablePan={false} minDistance={3} maxDistance={7}/>
   </Canvas>;
 }

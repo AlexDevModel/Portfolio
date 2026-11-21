@@ -34,7 +34,7 @@ Most of the site's colours use these variables, so changing them updates the des
 The Google Fonts link is in `index.html`. PT Serif is the main typeface; DM Mono is used for small labels. Update the font link and the `font-family` declarations in `src/styles.css` to change them. Local fallback fonts are included.
 
 ## Edit project cards
-Open `src/data/projects.ts`. Each project has a number, title, category, description and accent class. Replace the starter text with your real project details. Add another object to the array to add another card. The card layout is in `src/components/ProjectGallery.tsx`.
+Open `src/data/projects.ts`. Each project has a number, title, category, description and accent class. Replace the starter text with your real project details. Add another object to the array to add another card. The card layout is in `src/components/ProjectGallery.tsx`, and each card's pointer-tilt behaviour is in `src/components/ProjectCard.tsx`. The tilt is deliberately subtle and only responds to a mouse; touch users get the normal card layout.
 
 The current card artwork is CSS shapes, not final project imagery. We can replace each with your own screenshots and links as you provide them.
 
